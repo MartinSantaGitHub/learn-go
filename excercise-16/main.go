@@ -24,6 +24,7 @@ func main() {
 
 	fmt.Println("I came to here")
 
+	// Here is going to do an await
 	duration := <-channel1
 
 	fmt.Println(duration)
