@@ -10,6 +10,10 @@ type BankAccount struct {
 
 /* This method receives a pointer to BankAccount */
 func Withdraw(account *BankAccount, amount int) error {
+	if account == nil {
+		return fmt.Errorf("account argument is a nil pointer")
+	}
+
 	fmt.Println("\nWithdrawing ", amount)
 
 	if account.balance < amount {
@@ -64,6 +68,8 @@ func firstCase() {
 }
 
 func secondCase() {
+	//var account *BankAccount
+
 	/*
 		Here, we are creating a BankAccount and the result
 		is a reference to that BankAccount
@@ -71,6 +77,8 @@ func secondCase() {
 	account := new(BankAccount)
 
 	account.balance = 100
+
+	//account = nil
 
 	fmt.Println("account =", account)
 
