@@ -59,7 +59,7 @@ func (m *man) think() {
 	m.isThinking = true
 }
 
-func (m *man) sex() string {
+func (m man) sex() string {
 	if m.isMan {
 		return "Man"
 	}
@@ -67,7 +67,7 @@ func (m *man) sex() string {
 	return "Woman"
 }
 
-func (m *man) alive() bool {
+func (m man) alive() bool {
 	return m.isAlive
 }
 
@@ -79,7 +79,7 @@ func (this *dog) eat() {
 	this.isEating = true
 }
 
-func (d *dog) carnivorous() bool {
+func (d dog) carnivorous() bool {
 	return d.isCarnivorous
 }
 
