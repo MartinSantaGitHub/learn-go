@@ -11,5 +11,4 @@ func main() {
 	fmt.Printf("%T\n", a)
 	fmt.Println(reflect.TypeOf(a))
 	fmt.Println(reflect.ValueOf(a).Kind())
-
 }
