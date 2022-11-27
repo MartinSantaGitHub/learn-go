@@ -1,21 +1,23 @@
 package main
 
+import "fmt"
+
 type BankAccount struct {
 	balance int
 }
 
 func accountAddressByVal(account BankAccount) {
-	println()
-	println("Inside accountAddressByVal")
-	println()
-	println("Address of account: ", &account)
+	fmt.Println()
+	fmt.Println("Inside accountAddressByVal")
+	fmt.Println()
+	fmt.Printf("Address of account:  %p\n", &account)
 }
 
 func accountAddressByRef(account *BankAccount) {
-	println()
-	println("Inside accountAddressByRef")
-	println()
-	println("Address of account: ", account)
+	fmt.Println()
+	fmt.Println("Inside accountAddressByRef")
+	fmt.Println()
+	fmt.Printf("Address of account:  %p\n", account)
 }
 
 func main() {
@@ -23,9 +25,9 @@ func main() {
 
 	account.balance = 100
 
-	println("Address of account: ", account)
+	fmt.Printf("Address of account:  %p\n", account)
 
-	println()
+	fmt.Println()
 
 	// Each one of these lines creates a copy of account
 	a := *account
@@ -33,19 +35,19 @@ func main() {
 	c := *account
 
 	// Each one of them has different memory address
-	println("Address of a: ", &a)
-	println("Address of b: ", &b)
-	println("Address of c: ", &c)
+	fmt.Printf("Address of a:  %p\n", &a)
+	fmt.Printf("Address of b:  %p\n", &b)
+	fmt.Printf("Address of c:  %p\n", &c)
 
 	// We modify the balance of "c" by its reference
 	(&c).balance -= 20
 
-	println()
+	fmt.Println()
 
-	println("Balance of c (ByRef): ", (&c).balance)
-	println("Balance of c (ByVal): ", c.balance)
+	fmt.Printf("Balance of c (ByRef):  %d\n", (&c).balance)
+	fmt.Printf("Balance of c (ByVal):  %d\n", c.balance)
 
-	println()
+	fmt.Println()
 
 	// This creates a copy of c
 	d := *(&c)
@@ -53,8 +55,8 @@ func main() {
 	// This does the same, creates another copy of c
 	f := c
 
-	println("Address of d: ", &d)
-	println("Address of f: ", &f)
+	fmt.Printf("Address of d:  %p\n", &d)
+	fmt.Printf("Address of f:  %p\n", &f)
 
 	// This modifies the balance of "d" and "f" by their values (not a reference to them)
 	d.balance -= 20
@@ -63,24 +65,24 @@ func main() {
 	// This obtains the reference of "c". "g" is a reference of "c"
 	g := &c
 
-	println()
+	fmt.Println()
 
-	println("Address of g (same as c): ", g)
+	fmt.Printf("Address of g (same as c):  %p\n", g)
 
-	println()
+	fmt.Println()
 
 	// This modifies the balance of "c" by the reference of "g"
 	g.balance -= 20
 
-	println("Balance of c (ByRef): ", (&c).balance)
-	println("Balance of c (ByVal): ", c.balance)
+	fmt.Printf("Balance of c (ByRef):  %d\n", (&c).balance)
+	fmt.Printf("Balance of c (ByVal):  %d\n", c.balance)
 
 	// This creates a copy of "c". Remember, "g" is a reference of "c"
 	h := *g
 
-	println()
+	fmt.Println()
 
-	println("Address of h: ", &h)
+	fmt.Printf("Address of h:  %p\n", &h)
 
 	// Inside this method, a copy of "h" is created
 	accountAddressByVal(h)
