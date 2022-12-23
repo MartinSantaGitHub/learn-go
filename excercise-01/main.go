@@ -17,6 +17,16 @@ func main() {
 
 	u.Age = 10
 
+	var c []int
+
+	a := []int{1, 2, 3}
+	b := []int{4, 5, 6}
+
+	c = append(c, a...)
+	c = append(c, b...)
+
+	fmt.Print(c)
+
 	fmt.Println(u)
 	fmt.Println("Hello World!")
 }
