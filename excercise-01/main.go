@@ -8,14 +8,27 @@ type User struct {
 	Age int
 }
 
+type Usuario struct {
+	Id        string `json:"id"`
+	Name      string `json:"name,omitempty"`
+	LastName  string `json:"lastName,omitempty"`
+	Email     string `json:"email,omitempty"`
+	Password  string `json:"password,omitempty"`
+	Avatar    string `json:"avatar,omitempty"`
+	Banner    string `json:"banner,omitempty"`
+	Biography string `json:"biography,omitempty"`
+	Location  string `json:"location,omitempty"`
+	WebSite   string `json:"webSite,omitempty"`
+}
+
 func main() {
-	var u *User
+	// var u *User
 
-	defer func() {
-		fmt.Println("Crash!")
-	}()
+	// defer func() {
+	// 	fmt.Println("Crash!")
+	// }()
 
-	u.Age = 10
+	//u.Age = 10
 
 	var c []int
 
@@ -30,9 +43,11 @@ func main() {
 	//fmt.Println(u)
 	fmt.Println("Hello World!")
 
-	// data := make(map[string]string)
+	data := make(map[string]*Usuario)
 
-	// data["123"] = "Algo"
+	data["123"] = &Usuario{Name: "Pepe"}
 
-	// fmt.Println(data["123"])
+	retrieve := data["321"]
+
+	fmt.Println(retrieve == nil)
 }
