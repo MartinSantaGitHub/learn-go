@@ -27,6 +27,12 @@ func main() {
 
 	fmt.Print(c)
 
-	fmt.Println(u)
+	//fmt.Println(u)
 	fmt.Println("Hello World!")
+
+	// data := make(map[string]string)
+
+	// data["123"] = "Algo"
+
+	// fmt.Println(data["123"])
 }
