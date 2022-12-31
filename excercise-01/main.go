@@ -9,16 +9,16 @@ type User struct {
 }
 
 type Usuario struct {
-	Id        string `json:"id"`
-	Name      string `json:"name,omitempty"`
-	LastName  string `json:"lastName,omitempty"`
-	Email     string `json:"email,omitempty"`
-	Password  string `json:"password,omitempty"`
-	Avatar    string `json:"avatar,omitempty"`
-	Banner    string `json:"banner,omitempty"`
-	Biography string `json:"biography,omitempty"`
-	Location  string `json:"location,omitempty"`
-	WebSite   string `json:"webSite,omitempty"`
+	Id        string
+	Name      string
+	LastName  string
+	Email     string
+	Password  string
+	Avatar    string
+	Banner    string
+	Biography string
+	Location  string
+	WebSite   string
 }
 
 func main() {
