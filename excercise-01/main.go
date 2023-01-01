@@ -43,11 +43,17 @@ func main() {
 	//fmt.Println(u)
 	fmt.Println("Hello World!")
 
-	data := make(map[string]*Usuario)
+	// data := make(map[string]*Usuario)
 
-	data["123"] = &Usuario{Name: "Pepe"}
+	// data["123"] = &Usuario{Name: "Pepe"}
 
-	retrieve := data["321"]
+	// retrieve := data["321"]
 
-	fmt.Println(retrieve == nil)
+	// fmt.Println(retrieve == nil)
+
+	list := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+	results := list[5:7]
+
+	fmt.Println(results)
 }
